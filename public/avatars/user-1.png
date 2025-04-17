@@ -1,0 +1,2 @@
+code
+print(default_api.create_file(path = "public/avatars/user-1.png", content = "This is a placeholder image file."))

@@ -13,18 +13,10 @@ import { Star } from "lucide-react";
 
 const testimonials = [
   {
-    id: 1,
-    name: "Shubham R.",
-    location: "Pune",
-    avatar: "/avatars/user-1.png",
-    rating: 5,
-    comment: "The site really helped me find good properties without any brokerage. I was scared of high deposit and brokerage fees, but this platform made it simple to find a great home directly from owners."
-  },
-  {
     id: 2,
     name: "Lisa D.",
     location: "Mumbai",
-    avatar: "/avatars/user-2.png",
+    avatar: "/placeholder-avatar.png",
     rating: 5,
     comment: "It was a nice experience with DirectProperty. They helped me find a new home to stay as it was difficult for me as an individual to find a home with friendly roommates. Thankfully they helped me get one with all kinds of facilities."
   },
@@ -32,7 +24,7 @@ const testimonials = [
     id: 3,
     name: "Kishore P.",
     location: "Bangalore",
-    avatar: "/avatars/user-3.png",
+    avatar: "/placeholder-avatar.png",
     rating: 5,
     comment: "DirectProperty provides a great place to stay with safe environment. If they show you something about a property, that is always exactly as described. No fake pictures or misleading information."
   },
@@ -40,7 +32,17 @@ const testimonials = [
     id: 4,
     name: "Anoop N.",
     location: "Delhi",
-    avatar: "/avatars/user-4.png",
+    avatar: "/placeholder-avatar.png",
+    rating: 5,
+    comment: "Excellent service and an equally involved team. I opted for the premium plan and got a good deal on my property. Highly recommended app for anyone looking to rent or buy without brokers."
+  },
+  {
+    id: 1,
+    name: "Shubham R.",
+    location: "Pune",
+    avatar: "/avatars/user-1.png",
+    //location: "Delhi",
+    //avatar: "/avatars/user-4.png",
     rating: 5,
     comment: "Excellent service and an equally involved team. I opted for the premium plan and got a good deal on my property. Highly recommended app for anyone looking to rent or buy without brokers."
   },
@@ -48,7 +50,7 @@ const testimonials = [
     id: 5,
     name: "Tiasha M.",
     location: "Chennai",
-    avatar: "/avatars/user-5.png",
+    avatar: "/placeholder-avatar.png",
     rating: 5,
     comment: "The service was great and very professional. Their relationship manager was efficient. They noted my requirements quite well and suggested a list of options. I shortlisted one from them and in just one visit, I was able to finalize!"
   }
@@ -117,8 +119,10 @@ function TestimonialCard({ testimonial }: { testimonial: typeof testimonials[0] 
       <CardContent className="p-6">
         <div className="flex items-center mb-4">
           <Avatar className="h-10 w-10 mr-4">
+            {testimonial.avatar && (
+              <AvatarImage src={testimonial.avatar} alt={testimonial.name} />
+            )}
             <AvatarFallback>{testimonial.name[0]}</AvatarFallback>
-            <AvatarImage src={testimonial.avatar} />
           </Avatar>
           <div>
             <h4 className="font-medium">{testimonial.name}</h4>
