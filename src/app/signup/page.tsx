@@ -1,17 +1,12 @@
-/*export default function SignupPage() {
-  return (
-    <div>
-      <h1>Signup Page</h1>
-    </div>
-  );*/
-//}// src/app/page.tsx
-import PropertyList from "@/components/PropertyList";
+"use client";
+import { Suspense } from "react";
 
-export default function Home() {
+export default function SignupPage() {
   return (
-    <div>
-      {/* Other content */}
-      <PropertyList />
-    </div>
+    <Suspense fallback={<div>Loading signup...</div>}>
+      <div>
+        <h1>Signup Page</h1>
+      </div>
+    </Suspense>
   );
 }
